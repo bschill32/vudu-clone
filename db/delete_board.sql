@@ -1,5 +1,4 @@
-update cart
-set quantity = $2
+delete from cart
 where board_id = $1;
 
 select * from cart

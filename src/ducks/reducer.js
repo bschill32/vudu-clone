@@ -1,15 +1,15 @@
 let initialState =  {
-    movies: [],
+    boards: [],
     cart: []
 }
 
-const GET_MOVIES = 'GET_MOVIES'
+const GET_BOARDS = 'GET_BOARDS'
 const GET_CART = 'GET_CART'
 
 export default function reducer(state = initialState, action) {
     switch(action.type) {
-        case GET_MOVIES:
-            return Object.assign({}, state, {movies: action.payload})
+        case GET_BOARDS:
+            return Object.assign({}, state, {boards: action.payload})
         case GET_CART:
             return {...state, cart: action.payload}
         default:
@@ -17,10 +17,10 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-export function getMovies(movies) {
+export function getBoards(boards) {
     return {
-        type: GET_MOVIES,
-        payload: movies
+        type: GET_BOARDS,
+        payload: boards
     }
 }
 

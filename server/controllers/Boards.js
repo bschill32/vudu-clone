@@ -1,8 +1,8 @@
 module.exports = {
-    getMovies: (req, res) => {
+    getBoards: (req, res) => {
         const db = req.app.get('db')
-        db.get_movies().then(movies => {
-            res.status(200).send(movies)
+        db.get_boards().then(boards => {
+            res.status(200).send(boards)
         })
     },
 
@@ -37,7 +37,7 @@ module.exports = {
         let {quantity} = req.query
         if(quantity) {
             if(+quantity === 0) {
-                db.delete_movie(id).then(cart => {
+                db.delete_board(id).then(cart => {
                     res.status(200).send(cart)
                 })
             } else {
@@ -50,10 +50,10 @@ module.exports = {
         }
     },
 
-    deleteMovie: (req, res) => {
+    deleteBoard: (req, res) => {
         const db = req.app.get('db')
         let {id} = req.params
-        db.delete_movie(id).then(cart => {
+        db.delete_board(id).then(cart => {
             res.status(200).send(cart)
         })
     },

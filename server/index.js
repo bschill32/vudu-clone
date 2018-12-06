@@ -1,11 +1,12 @@
 require('dotenv').config()
 
 const express = require('express')
-    , session = require('express-session')
+    // , session = require('express-session')
     , massive = require('massive')
     , bodyParser = require('body-parser')
-    , AuthCtrl = require('./controllers/Auth')
-    , MovieCtrl = require('./controllers/Movies')
+    // , AuthCtrl = require('./controllers/Auth')
+    , BoardCtrl = require('./controllers/Boards')
+    , Server = require('./controllers/Server')
 
 const app = express();
 
@@ -23,13 +24,17 @@ app.use(bodyParser.json())
 //     saveUninitialized: false
 // }))
 
-app.get('/api/movies', MovieCtrl.getMovies)
+//Boards
+app.get('/api/boards', BoardCtrl.getBoards)
 
-app.get('/api/cart', MovieCtrl.getCart)
-app.post('/api/cart/:id', MovieCtrl.addToCart)
-app.put('/api/cart/:id', MovieCtrl.updateQuantity)
-app.delete('/api/cart/checkout', MovieCtrl.checkout)
-app.delete('/api/cart/:id', MovieCtrl.deleteMovie)
+app.get('/api/cart', BoardCtrl.getCart)
+app.post('/api/cart/:id', BoardCtrl.addToCart)
+app.put('/api/cart/:id', BoardCtrl.updateQuantity)
+app.delete('/api/cart/checkout', BoardCtrl.checkout)
+app.delete('/api/cart/:id', BoardCtrl.deleteBoard)
+
+//Server
+app.post('/api/charge', Server.Credit)
 
 app.listen(SERVER_PORT, () => console.log('When in doubt just delete it.....', SERVER_PORT))
 

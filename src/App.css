@@ -1,3 +1,11 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Covered By Your Grace', cursive; */
+  /* font-family: 'Rock Salt', cursive; */
+  /* font-family: 'Syncopate', sans-serif; */
+  /* font-family: 'Swanky and Moo Moo', cursive; */
+}
+
 .App {
   text-align: center;
 }
@@ -30,3 +38,235 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  /* background-color: #2b2e31; */
+  background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
+  background-size: cover;
+  height: 9vh;
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  justify-content: space-between;
+  /* position: relative; */
+  /* padding-top: 8px;
+  padding-bottom: 8px; */
+}
+
+.anchorContainer {
+  height: 91vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.smooth-scroll {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.logo {
+  margin-left: 6%;
+  /* font-size: 20px; */
+  /* font-family: 'Montserrat', sans-serif; */
+  color: #FF9D29;
+  /* text-decoration: none; */
+}
+
+.links{
+  margin-right: 6%
+
+}
+
+a {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  color: #C3C3C3;
+  text-decoration: none;
+  padding-left: 25px;
+
+}
+
+a:hover {
+  color: #FF9D29;
+}
+
+.home {
+  background-image: url("https://cdn.surfer.com/uploads/2015/08/callinansimpson.jpg");
+  background-size: cover;
+  display: flex;
+  height: 130vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 9vh;
+  margin-top: -40vh;
+}
+
+.board-header {
+  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
+  display: block;
+  color: rgb(230, 230, 230);
+  margin: 0;
+  padding: 2.5vh 6%;
+  /* font-family: 'Montserrat', sans-serif;
+  font-weight: 700 */
+}
+
+.boards-container {
+  background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg");
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.surfboards {
+  /* background-color: #2b2e31; */
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 100vh; */
+  /* width: 100%; */
+  justify-content: center;
+  color: #C3C3C3;
+}
+
+.board-space {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.board-zoom {
+  /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s;
+    /* width: 200px; */
+    /* height: 200px; */
+    margin: 0 auto;
+}
+
+.board-zoom:hover {
+  transform: scale(1.1);
+}
+
+.board-box {
+  /* background-image: url("https://i.pinimg.com/originals/49/74/ca/4974cac50c76b958d100447780924fcd.jpg"); */
+  background-size: cover;
+  border-radius: 15%;
+  justify-content: center;
+  text-align: center;
+}
+
+/* .board-box:hover {
+  filter: blur(8px);
+} */
+
+.board-name {
+  color: #FF9D29;
+  /* filter: none;
+  z-index: 10; */
+}
+
+.team-header {
+  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
+  display: block;
+  color: rgb(230, 230, 230);
+  margin: 0;
+  padding: 2.5vh 6%;
+  
+  /* background-color: #2b2e31;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: #C3C3C3; */
+}
+
+.team-container {
+  /* background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg"); */
+  background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
+  background-size: cover;
+  /* height: 140vh; */
+  /* width: 100vw; */
+  padding-top: 50px;
+  padding-bottom: 51px;
+}
+
+.team-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #C3C3C3;
+  text-align: center;
+}
+
+img.team-pic {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.team-rep {
+  color: #FF9D29;
+}
+
+.contact-header {
+  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
+  display: block;
+  color: rgb(230, 230, 230);
+  margin: 0;
+  padding: 2.5vh 6%;
+}
+
+.contact-container {
+  background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg");
+  background-size: cover;
+  height: 140vh;
+  width: 100vw;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.cart-header {
+  /* margin-top: 0; */
+  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
+  display: block;
+  color: rgb(230, 230, 230);
+  margin: 0;
+  padding: 2.5vh 6%;
+}
+
+.cart-container {
+  background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
+  background-size: cover;
+  /* height: 140vh; */
+  /* width: 100vw; */
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #C3C3C3;
+  text-align: center;
+}
+
+.stripe-container {
+  margin: 0 38% 0 38%;
+  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910);
+  border-radius: 15%;
+}
+
+.stripe {
+  /* display: block; */
+  justify-content: center;
+  color: #C3C3C3;
+  text-align: center;
+}
+

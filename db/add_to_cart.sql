@@ -1,6 +1,6 @@
-insert into cart(movie_id, quantity)
+insert into cart(board_id, quantity)
 values ($1, 1);
 
 select * from cart
-join movies on cart.movie_id = movies.id
-order by movies.id
+join boards on cart.board_id = boards.id
+order by boards.id;

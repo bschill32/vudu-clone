@@ -3,10 +3,10 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {getCart} from '../ducks/reducer'
 
-class CartMovie extends Component {
+class CartBoard extends Component {
 
     updateQuantity = (update) => {
-        let {id, quantity} = this.props.cartMovie
+        let {id, quantity} = this.props.cartBoard
         if(update === 'up') {
             quantity++
         } else if (update === 'down') {
@@ -18,16 +18,17 @@ class CartMovie extends Component {
     }
 
     deleteItem = () => {
-        axios.delete(`/api/cart/${this.props.cartMovie.id}`).then(results => {
+        axios.delete(`/api/cart/${this.props.cartBoard.id}`).then(results => {
             this.props.getCart(results.data)
         })
     }
 
     render() {
-        let {title, price, quantity} = this.props.cartMovie
+        let {name, image, price, quantity} = this.props.cartBoard
         return (
             <div>
-                <h3>{title}</h3>
+                <h3>{name}</h3>
+                <img class='board-zoom' width = "70px" height = "100px" src={image} alt=""/>
                 <p>Quantity {quantity}</p>
                 <button onClick={() => this.updateQuantity('up')}>+</button>
                 <button onClick={() => this.updateQuantity('down')}>-</button>
@@ -38,4 +39,4 @@ class CartMovie extends Component {
     }
 }
 
-export default connect(null, {getCart})(CartMovie)
+export default connect(null, {getCart})(CartBoard)
