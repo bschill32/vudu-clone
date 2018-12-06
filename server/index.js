@@ -7,6 +7,7 @@ const express = require('express')
     // , AuthCtrl = require('./controllers/Auth')
     , BoardCtrl = require('./controllers/Boards')
     , Server = require('./controllers/Server')
+    // , path = require('path');
 
 const app = express();
 
@@ -25,6 +26,9 @@ app.use(bodyParser.json())
 // }))
 
 //Boards
+
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.get('/api/boards', BoardCtrl.getBoards)
 
 app.get('/api/cart', BoardCtrl.getCart)

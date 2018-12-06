@@ -81,7 +81,7 @@
 
 }
 
-a {
+.links a {
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   color: #C3C3C3;
@@ -90,7 +90,7 @@ a {
 
 }
 
-a:hover {
+.links a:hover {
   color: #FF9D29;
 }
 
@@ -212,6 +212,10 @@ img.team-pic {
 
 .team-rep {
   color: #FF9D29;
+}
+
+.instagram {
+  color: #C3C3C3;
 }
 
 .contact-header {
