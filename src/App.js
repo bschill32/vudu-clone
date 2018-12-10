@@ -5,7 +5,8 @@ import Home from './components/Home'
 import Team from './components/Team'
 import About from './components/About'
 import Cart from './components/Cart'
-import Contact from './components/Contact'
+// import Contact from './components/Contact'
+import SurfReport from './components/SurfReport'
 import axios from 'axios'
 import Nav from './components/Nav'
 import {connect} from 'react-redux'
@@ -48,6 +49,7 @@ class App extends Component {
           <BoardsList/>
           <Team/>
           <About/>
+          <SurfReport/>
           <Cart/>
           {/* <Contact/> */}
         </div>

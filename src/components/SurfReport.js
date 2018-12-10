@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 
-class About extends Component {
+class SurfReport extends Component {
     constructor() {
         super()
 
@@ -13,10 +13,10 @@ class About extends Component {
 
     componentDidMount = () => {
         axios.get('http://api.spitcast.com/api/spot/forecast/217/').then(response => {
-            // console.log('TMDB', response);
+            console.log('surf', response);
             var items = response.data
             var ten = response.data
-            var items = ten.splice(0,10);
+            var items = ten.splice(0,1);
             this.setState({
                 surfData: items
             });
@@ -26,12 +26,12 @@ class About extends Component {
     render() {
         console.log(this.state.surfData)
         return (
-            <div id='about'>
+            <div id='surf-report'>
                 <div className='page-container'>
-                    <h1 className="page-title">About</h1>
+                    <h1 className="page-title">SurfReport</h1>
                 </div>
-                <div className="about-container">
-                    <div className="about-info">
+                <div className="surf-report-container">
+                    <div className="surf-report-info">
                         <img className='report-img'src='http://www.discoverlamirada.com/wp-content/uploads/2017/09/surf_thewedge1.jpg' alt="theWedge"/>
                         {
                             this.state.surfData.map(update => {
@@ -62,4 +62,4 @@ class About extends Component {
     }
 }
 
-export default About
+export default SurfReport
