@@ -28,7 +28,7 @@ class SurfReport extends Component {
         return (
             <div id='surf-report'>
                 <div className='page-container'>
-                    <h1 className="page-title">SurfReport</h1>
+                    <h1 className="page-title">Surf Forecast</h1>
                 </div>
                 <div className="surf-report-container">
                     <div className="surf-report-info">

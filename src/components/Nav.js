@@ -10,6 +10,7 @@ function Nav(props) {
                 <a href='#boards'>Surfboards</a>
                 <a href='#team'>Team</a>
                 <a href='#about'>About</a>
+                <a href='#surf-report'>Surf Forecast</a>
                 <a href='#cart'><i class="fas fa-cart-arrow-down"></i></a>
                 {/* <a href='#contact'>Contact</a> */}
                 {/* <Link to='/'>Home</Link>
