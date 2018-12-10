@@ -1,9 +1,7 @@
 * {
   font-family: 'Montserrat', sans-serif;
-  /* font-family: 'Covered By Your Grace', cursive; */
   /* font-family: 'Rock Salt', cursive; */
-  /* font-family: 'Syncopate', sans-serif; */
-  /* font-family: 'Swanky and Moo Moo', cursive; */
+  /* font-family: 'Amatic SC', cursive; */
 }
 
 .App {
@@ -39,22 +37,42 @@
   }
 }
 
-.navbar {
+#navbar {
   /* background-color: #2b2e31; */
-  background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
-  background-size: cover;
+  /* background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
+  background-size: cover; */
   height: 9vh;
   display: flex;
   align-items: center; 
   width: 100%;
   justify-content: space-between;
-  /* position: relative; */
+  position: fixed;
+  z-index: 10;
+  border-bottom-left-radius: 20px 10%;
+  border-bottom-right-radius: 20px 10%;
   /* padding-top: 8px;
   padding-bottom: 8px; */
 }
 
+.scroll {
+  /* background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg"); */
+  /* background-size: cover; */
+  animation: scrollOpacity 1s linear forwards;
+}
+
+@keyframes scrollOpacity {
+  0% {
+    background: none;
+  }
+  100% {
+    /* background-image: url("http://www.driftcentral.com/wp-content/uploads/2015/09/Dark-Grey-Background-Photo-HD-Wallpaper-2nwk9-Free.jpeg");
+    background-size: cover; */
+    background-color: #202224ee;
+  }
+}
+
 .anchorContainer {
-  height: 91vh;
+  height: 100vh;
   overflow-y: scroll;
   width: 100%;
 }
@@ -73,6 +91,8 @@
   /* font-size: 20px; */
   /* font-family: 'Montserrat', sans-serif; */
   color: #FF9D29;
+  text-shadow: 3px 5px 10px #000;
+  font-family: 'Rock Salt', cursive;
   /* text-decoration: none; */
 }
 
@@ -84,14 +104,35 @@
 .links a {
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
-  color: #C3C3C3;
+  color: rgb(230, 230, 230);
   text-decoration: none;
   padding-left: 25px;
-
+  text-shadow: 3px 5px 10px #000;
 }
 
 .links a:hover {
   color: #FF9D29;
+}
+
+.page-container {
+  background-image: linear-gradient(#C35910 20%, #FF9D29 80%, #C35910);
+  height: 1vh;
+  width: 100%;
+  /* margin: 0; */
+}
+
+.page-title {
+  /* background-image: linear-gradient(#C35910 20%, #FF9D29 80%, #C35910); */
+  color: rgb(230, 230, 230);
+  margin: 0;
+  padding: 1.5vh 10%;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 3px 5px 10px #000;
+  
+  /* display: block; */
+  /* font-size: 20px; */
+  /* font-family: 'Montserrat', sans-serif;
+  font-weight: 700 */
 }
 
 .home {
@@ -103,24 +144,27 @@
   justify-content: center;
   align-items: flex-end;
   padding-top: 9vh;
-  margin-top: -40vh;
+  margin-top: -30vh;
 }
 
-.board-header {
-  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
-  display: block;
-  color: rgb(230, 230, 230);
-  margin: 0;
-  padding: 2.5vh 6%;
-  /* font-family: 'Montserrat', sans-serif;
-  font-weight: 700 */
+/*MAKE PAGE FLUSH*/
+#boards::before {
+  display: block; 
+  content: " "; 
+  margin-top: -9vh; 
+  height: 9vh; 
+  visibility: hidden; 
+  pointer-events: none;
 }
 
 .boards-container {
   background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg");
   background-size: cover;
-  padding-top: 40px;
+  background-position-x: 0%;
+  padding-top: 90px;
   padding-bottom: 30px;
+  /* margin-top: -2vh; */
+  /* z-index: 0; */
 }
 
 .surfboards {
@@ -130,7 +174,7 @@
   /* height: 100vh; */
   /* width: 100%; */
   justify-content: center;
-  color: #C3C3C3;
+  color: rgb(230, 230, 230);
 }
 
 .board-space {
@@ -150,6 +194,39 @@
 
 .board-zoom:hover {
   transform: scale(1.1);
+  z-index: 0;
+}
+
+.tooltip1 {
+  position: relative;
+  display: inline-block;
+  color: #fff
+}
+
+.tooltip1 .tooltiptext1 {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(32, 32, 32, 0.692);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* width: 120px; */
+  top: 30%;
+  left: 50%; 
+  margin-left: -100px;
+  position: absolute;
+  z-index: 1;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 26px;
+  margin-top: 5px;
+}
+
+.tooltip1:hover .tooltiptext1 {
+  visibility: visible;
+  color: #fff;
+  text-shadow: 3px 5px 10px #000;
 }
 
 .board-box {
@@ -161,27 +238,38 @@
 }
 
 /* .board-box:hover {
-  filter: blur(8px);
+  filter: blur(8px); 
 } */
 
 .board-name {
   color: #FF9D29;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 3px 5px 10px #000;
   /* filter: none;
   z-index: 10; */
 }
 
-.team-header {
-  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
-  display: block;
-  color: rgb(230, 230, 230);
-  margin: 0;
-  padding: 2.5vh 6%;
-  
-  /* background-color: #2b2e31;
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  color: #C3C3C3; */
+
+
+.board-button {
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.87);
+  color: #000;
+  border: none;
+  font-family: 'Amatic SC', cursive;
+  font-size: 22px;
+  border-radius: 6px;
+  margin: 5px 0;
+  box-shadow: 3px 5px 10px #000;
+}
+
+#team::before {
+  display: block; 
+  content: " "; 
+  margin-top: -9vh; 
+  height: 9vh; 
+  visibility: hidden; 
+  pointer-events: none;
 }
 
 .team-container {
@@ -190,7 +278,7 @@
   background-size: cover;
   /* height: 140vh; */
   /* width: 100vw; */
-  padding-top: 50px;
+  padding-top: 90px;
   padding-bottom: 51px;
 }
 
@@ -202,46 +290,183 @@
   text-align: center;
 }
 
+.team-info p {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 26px;
+  margin: 0;
+  margin-bottom: 8px;
+  text-shadow: 3px 5px 10px #000;
+}
+
 img.team-pic {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   border-radius: 50%;
   margin-left: 15px;
   margin-right: 15px;
+  box-shadow: 3px 5px 10px #000;
 }
 
 .team-rep {
   color: #FF9D29;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 3px 5px 10px #000;
+  margin-bottom: 2px;
 }
 
 .instagram {
   color: #C3C3C3;
 }
 
-.contact-header {
-  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
-  display: block;
-  color: rgb(230, 230, 230);
-  margin: 0;
-  padding: 2.5vh 6%;
+.team-info i {
+  text-shadow: 3px 5px 10px #000;
 }
 
-.contact-container {
+.tooltip {
+  position: relative;
+  display: inline-block;
+  color: #C3C3C3
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  /* background-color: rgba(32, 32, 32, 0.521); */
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* width: 120px; */
+  top: 100%;
+  left: 50%; 
+  margin-left: -100px;
+  position: absolute;
+  z-index: 1;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  color: rgb(230, 230, 230);
+  text-shadow: 3px 5px 10px #000;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #C3C3C3 transparent;
+}
+
+#about::before {
+  display: block; 
+  content: " "; 
+  margin-top: -9vh; 
+  height: 9vh; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+.about-container {
   background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg");
   background-size: cover;
-  height: 140vh;
+  /* height: 100vh; */
   width: 100vw;
-  padding-top: 40px;
+  padding-top: 90px;
   padding-bottom: 50px;
 }
 
-.cart-header {
-  /* margin-top: 0; */
-  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910) ;
-  display: block;
+.about-info {
   color: rgb(230, 230, 230);
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-story {
+  /* background-color: purple; */
+  box-sizing: border-box;
+  color: rgb(230, 230, 230);
+  width: 100vw;
+  padding: 10px 40px 20px 40px;
+}
+
+.about-story h1 {
   margin: 0;
-  padding: 2.5vh 6%;
+  color: #FF9D29;
+  text-shadow: 3px 5px 10px #000;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 52px;
+}
+
+.about-story h2 {
+  margin: 5px 0;
+  text-shadow: 3px 5px 10px #000;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.about-story .text {
+  /* background-color: rgba(32, 32, 32, 0.692); */
+  border-radius: 8px;
+  text-shadow: 3px 5px 10px #000;
+}
+.about-info i {
+  color: #FF9D29;
+  margin: 0 10px;
+  text-shadow: 3px 5px 10px #000;
+}
+
+.about-pics {
+  /* background-color: purple; */
+  box-sizing: border-box;
+  color: rgb(230, 230, 230);
+  width: 100vw;
+}
+
+.pics-container {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: wrap;
+  /* max-width: 25%; */
+  padding: 0 4px;
+}
+
+.column img {
+  border-radius: 12px;
+  box-shadow: 3px 5px 10px #000;
+  margin-top: 8px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+#cart::before {
+  display: block; 
+  content: " "; 
+  margin-top: -9vh; 
+  height: 9vh; 
+  visibility: hidden; 
+  pointer-events: none;
 }
 
 .cart-container {
@@ -249,7 +474,7 @@ img.team-pic {
   background-size: cover;
   /* height: 140vh; */
   /* width: 100vw; */
-  padding-top: 40px;
+  padding-top: 90px;
   padding-bottom: 50px;
 }
 
@@ -257,14 +482,63 @@ img.team-pic {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #C3C3C3;
+  color: rgb(230, 230, 230);
   text-align: center;
+}
+
+.cart-name {
+  color: #FF9D29;
+  font-family: 'Rock Salt', cursive;
+  text-shadow: 3px 5px 10px #000;
+  margin: 0;
+}
+
+.cart-space p {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 26px;
+  margin: 5px;
+  text-shadow: 3px 5px 10px #000;
+}
+
+.example p {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 46px;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #FF9D29;
+  text-shadow: 3px 5px 10px #000;
+}
+
+.cart-button {
+  /* background-color: rgba(32, 32, 32, 0.87); */
+  /* color: rgb(230, 230, 230); */
+  border: none;
+  font-family: 'Amatic SC', cursive;
+  font-size: 22px;
+  border-radius: 6px;
+  margin: 0 5px;
+  font-weight: 700;
+  box-shadow: 3px 5px 10px #000;
+  /* box-shadow: 3px 5px 10px #000; */
+}
+
+.cart-space {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  /* box-shadow: 3px 5px 10px #000; */
+  border-radius: 5px 20px 5px;
+  /* background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg"); */
+  background-position-x: 50%;
+  background-size: cover;
 }
 
 .stripe-container {
   margin: 0 38% 0 38%;
-  background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910);
-  border-radius: 15%;
+  /* background-image: linear-gradient(#C35910 10%, #FF9D29 90%, #C35910); */
+  border-radius: 12px;
 }
 
 .stripe {
@@ -274,3 +548,21 @@ img.team-pic {
   text-align: center;
 }
 
+/* #contact::before {
+  display: block; 
+  content: " "; 
+  margin-top: -9vh; 
+  height: 9vh; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
+.contact-container {
+  background-image: url("https://www.desktopbackground.org/download/2560x1440/2015/12/23/1062154_top-hd-chalk-board-wallpapers_3600x3600_h.jpg");
+  background-size: cover;
+  height: 140vh;
+  width: 100vw;
+  padding-top: 90px;
+  padding-bottom: 50px;
+}
+ */

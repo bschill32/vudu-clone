@@ -10,7 +10,9 @@ function BoardsList(props) {
     })
     return (
             <div id='boards'>
-                <h1 className="board-header">SurfBoards</h1>
+                <div className='page-container'>
+                    <h1 className="page-title">Surfboards</h1>
+                </div>
                 <div className="boards-container">
                     <div className="surfboards">{boards}</div>
                 </div>

@@ -17,7 +17,7 @@ class Cart extends Component {
     checkout = () => {
         if(this.props.cart.length) {
             axios.delete('/api/cart/checkout').then(results => {
-                alert('Success!')
+                alert('Payment Successful!')
                 this.props.getCart(results.data)
             })
         } else {
@@ -35,20 +35,22 @@ class Cart extends Component {
         })
         return (
             <div id='cart'>
-                <h1 className='cart-header'>Cart</h1>
+                <div className='page-container'>
+                    <h1 className='page-title'>Cart</h1>
+                </div>
                 <div className="cart-container">
                     <div className='cart-info'>
                         {cart}
-                        <p>Total ${Math.floor(cartTotal * 100) / 100}</p>
-                        <button onClick={this.checkout}>Checkout</button>
                     </div>
                     <div className='stripe-container'>
                         <div className='stripe'>
                             <StripeProvider apiKey="pk_test_3LbwziJs8XwqPy2dMzCkyeU0">
                                 <div className="example">
-                                    <h1>Pay with stripe</h1>
+                                    {/* <h1>Pay with stripe</h1> */}
+                                    <p>Total ${Math.floor(cartTotal * 100) / 100}</p>
+                                    {/* <button onClick={this.checkout}>Checkout</button> */}
                                     <Elements>
-                                        <CheckoutForm />
+                                        <CheckoutForm checkout={this.checkout}/>
                                     </Elements>
                                 </div>
                             </StripeProvider>

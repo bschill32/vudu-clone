@@ -12,17 +12,20 @@ class CheckoutForm extends Component {
  async submit(ev) {
    let token = await this.props.stripe.createToken({name: "Name"});
    let id = token.token.id;
-   axios.post('/api/charge', {id}).then(() => {this.setState({complete: true})})
+   axios.post('/api/charge', {id}).then(() => {
+     this.setState({complete: true})
+     this.props.checkout()
+    })
 
  }
 
  render() {
-   if (this.state.complete) return <h1>Purchase Complete</h1>;
+   if (this.state.complete) return <h1>Payment Successful</h1>;
    return (
      <div className="checkout">
-       <p>Would you like to complete the purchase?</p>
+       {/* <p>Would you like to complete the purchase?</p> */}
        <CardElement />
-       <button onClick={this.submit}>Send</button>
+       <button class='cart-button' onClick={this.submit}>Buy Now</button>
      </div>
    );
  }
